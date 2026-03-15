@@ -7,16 +7,28 @@ function exibirTextoNaTela(tag, texto) {
     let campo = document.querySelector(tag);
     campo.innerHTML = texto;
 
-    // Usando a API nativa do navegador (SpeechSynthesis)
+    // Esta parte faz o navegador falar usando a voz nativa do sistema
     if ('speechSynthesis' in window) {
         let utterance = new SpeechSynthesisUtterance(texto);
         utterance.lang = 'pt-BR'; 
         utterance.rate = 1.2; 
         window.speechSynthesis.speak(utterance);
-    } else {
-        console.log("Navegador não suporta leitura de voz.");
-    };
-};
+    }
+}
+//function exibirTextoNaTela(tag, texto) {
+    //let campo = document.querySelector(tag);
+    //campo.innerHTML = texto;
+
+    // Usando a API nativa do navegador (SpeechSynthesis)
+    //if ('speechSynthesis' in window) {
+        //let utterance = new SpeechSynthesisUtterance(texto);
+        //utterance.lang = 'pt-BR'; 
+        //utterance.rate = 1.2; 
+       // window.speechSynthesis.speak(utterance);
+    //} else {
+       // console.log("Navegador não suporta leitura de voz.");
+    //};
+//};
 
 function exibirMensagemInicial() {
     exibirTextoNaTela('h1', 'Jogo do Número Secreto');
